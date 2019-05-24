@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Guest List</title>
+    </head>
+    <body>
+        <p class="refused"></p>
+        <p class="admitted"></p>
+
+        <script>
+            function replaceLastCharacter(textInput,lastChar = '.') {
+                return textInput.slice(0,-2) + lastChar;  
+            }
+
+            const people = ['Chris', 'Anne', 'Colin', 'Terri', 'Phil', 'Lola', 'Sam', 'Kay', 'Bruce'];
+
+            const admitted = document.querySelector('.admitted');
+            const refused = document.querySelector('.refused');
+
+            admitted.textContent = 'Admit: ';
+            refused.textContent = 'Refuse: ';
+
+            for (let i = 0; i <= (people.length -1); i++) {
+
+                if (people[i] === 'Phil' || people[i] === 'Lola')
+                {
+                    refused.textContent += (people[i] + ', ');
+                }
+                else {
+                    admitted.textContent += (people[i] + ', '); 
+                }
+            }
+            admitted.textContent = replaceLastCharacter(admitted.textContent);
+            refused.textContent = replaceLastCharacter(refused.textContent);
+        </script>
+    </body>
+</html>
